@@ -1,0 +1,29 @@
+{% extends "todo/layout.html" %}
+
+{% block content %}
+<table align="center" style="padding: 30px">
+<form method="post">
+
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <tr><th><h4>¿En qué juego habias pensado?</h4></th></tr>
+    <tr><th><div class="fieldWrapper">
+    {{ form.respuesta.errors }}
+    {{ form.respuesta }}
+    </div></th></tr>
+    <tr><th><br></th></tr>
+    <tr><th><h4>¿Qué tiene este juego que {{ arbols.texto }} no?</h4></th></tr>
+   <tr><th> <div class="fieldWrapper">
+    {{ form.pregunta.errors }}
+    {{ form.pregunta }}
+    </div></th></tr>
+        <tr><th><br></th></tr>
+        <tr align="center"><th><button class="btn btn-success" style="text-align: center; padding: 5px; width: 180px" id="liveToastBtn">Enviar</button></th></tr>
+
+
+    
+</form>
+</table>
+<br>
+<br>
+{% endblock %}

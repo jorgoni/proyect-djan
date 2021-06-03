@@ -1,0 +1,41 @@
+{% extends "todo/layout.html" %}
+
+{% block content %}
+
+<main>
+    <div class="contenedorPregunta" style="text-align: center; padding: 30px;">
+        
+        {% if arbols.pregunta is False %}
+            <div class="contenedorRespuesta">
+            <h2>¿El juego en el que piensas es <br>{{ arbols.texto }}?</h2>
+            <br>
+            
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-outline-primary" href="{% url 'respuesta' arbols.nodo %}" style="text-decoration: none">SI</a>
+                <a class="btn btn-outline-primary" href="{% url 'oportunidad' arbols.nodo %}" style="text-decoration: none">NO</a>
+            </div>
+            </div>
+            
+        {% else %}
+            <div class="contenedorRespuesta" style="text-align: center; padding: 30px;">
+            <h2>¿El juego pensado <br>{{ arbols.texto }}?</h2>
+            <br>        
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-outline-primary" href="{% url 'homsi' arbols.nodo %}" style="text-decoration: none">SI</a>
+                <a class="btn btn-outline-primary" href="{% url 'homno' arbols.nodo %}" style="text-decoration: none">NO</a>
+                <a class="btn btn-outline-primary" href="{% url 'homnose' arbols.nodo %}" style="text-decoration: none">NO SÉ</a>
+                <a class="btn btn-outline-primary" href="{% url 'hompsi' arbols.nodo %}" style="text-decoration: none">PROBABLEMENTE SI</a>
+                <a class="btn btn-outline-primary" href="{% url 'hompno' arbols.nodo %}" style="text-decoration: none">PROBABLEMENTE NO</a>
+            </div>
+            
+                
+            </div>
+        {% endif %}
+    </div>
+    
+    
+</main>
+
+
+
+{% endblock %}

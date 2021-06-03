@@ -1,0 +1,12 @@
+body{
+    padding-top: 3em;
+    max-width: 40em;
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+header{
+    background-color: #EEEEEE;
+    text-align: center;
+}
